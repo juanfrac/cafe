@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Tabla</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Formulario de Registro</h1>
+
+            <form id="form" class="form-group">
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="genero" class="form-label">Género:</label>
+                    <label ><input type="radio" name="genero" value="Masculino" required> Masculino</label>
+                    <label><input type="radio" name="genero" value="Femenino" required> Femenino</label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <select id="edad">
+                        <option value="18-25">18-25</option>
+                        <option value="26-35">26-35</option>
+                        <option value="36-45">36-45</option>
+                        <option value="46+">46+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Intereses:</label>
+                    <label><input type="checkbox" value="Deportes"> Deportes</label>
+                    <label><input type="checkbox" value="Música"> Música</label>
+                    <label><input type="checkbox" value="Viajes"> Viajes</label>
+                </div>
+                
+                <button type="button" onclick="agregarFila()">Agregar</button>
+            </form>
+        
+            <h2>Tabla de Datos</h2>
+            <table id="tabla" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Género</th>
+                        <th>Edad</th>
+                        <th>Intereses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas se agregarán aquí -->
+                </tbody>
+            </table>
+        
+        </div>
+    </div>
+
+    
+     <script src="js/misfunciones.js"></script>
+
+</body>
+</html>

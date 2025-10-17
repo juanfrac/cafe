@@ -1,0 +1,26 @@
+function agregarFila() {
+    // Obtener los valores del formulario
+    const nombre = document.getElementById("nombre").value;
+    const genero = document.querySelector('input[name="genero"]:checked')?.value;
+    const edad = document.getElementById("edad").value;
+    const intereses = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                           .map(checkbox => checkbox.value)
+                           .join(", ");
+
+    // Verificar que se haya completado el campo obligatorio
+    if (!nombre || !genero) {
+        alert("Por favor, complete todos los campos obligatorios.");
+        return;
+    }
+
+    // Crear una nueva fila en la tabla
+    const tabla = document.getElementById("tabla").querySelector("tbody");
+    const fila = tabla.insertRow();
+    fila.insertCell(0).innerText = nombre;
+    fila.insertCell(1).innerText = genero;
+    fila.insertCell(2).innerText = edad;
+    fila.insertCell(3).innerText = intereses;
+
+    // Limpiar el formulario después de agregar la fila
+    document.getElementById("form").reset();
+}
